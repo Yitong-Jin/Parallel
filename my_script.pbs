@@ -1,0 +1,10 @@
+#PBS -N parallel
+#PBS -l walltime=00:10:00
+#PBS -l select=1:ncpus=24:mpiprocs=24:mem=1GB
+
+module load intel-suite
+module load mpi
+
+cd $PBS_O_WORKDIR
+
+mpiexec -n 15 ~/acse6/my_code
